@@ -10,7 +10,7 @@ var ctrlOthers = require('../controllers/others');
 /* GET home page. */
 /*router.get('/', ctrlMain.index);
 module.exports = router; */
-
+//test
 
 /* Locations pages */
 router.get('/', ctrlLocations.homelist);  // home page is a list of locations
