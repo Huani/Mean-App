@@ -5,6 +5,14 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  /*Add an engines section to
+    package.json to tell Heroku
+    which platform your application
+    is on, and which version to use */
+  "engines": {
+"node": "~6.7.0",
+"npm": "~3.10.9"
+},
   "dependencies": {
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
