@@ -1,6 +1,6 @@
 /* GET 'home' page */
 module.exports.homelist = function(req, res){
-res.render('index', { title: 'Home' });
+res.render('locations-list', { title: 'Home' }); // location-list is de view die we willen renden
 };
 
 
