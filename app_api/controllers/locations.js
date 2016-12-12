@@ -62,7 +62,7 @@ var buildLocationList = function(req, res, results, stats) {
   var locations = [];
   results.forEach(function(doc) {
     locations.push({
-      distance: theEarth.getDistanceFromRads(doc.dis),
+      distance: doc.dis,    // theEarth.getDistanceFromRads(doc.dis) oorspronkelijk dit
       name: doc.obj.name,
       address: doc.obj.address,
       rating: doc.obj.rating,
