@@ -21,6 +21,7 @@ html(ng-app='loc8rApp')
               a(href='/about/') About
 
     .container
+     div(ng-view)
       block content
 
       footer
@@ -28,8 +29,8 @@ html(ng-app='loc8rApp')
           .col-xs-12
             small &copy; Simon Holmes 2014
 
-
-    script(src='/angular/loc8rApp.js')
+    script(src='/lib/angular-route.min.js')
+    script(src='/app.js')
     script(src='/javascripts/jquery-3.1.1.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
     script(src='/javascripts/validation.js')

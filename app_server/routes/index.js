@@ -4,10 +4,14 @@ var ctrlLocations = require('../controllers/locations');
 var ctrlOthers = require('../controllers/others');
 
 /* Locations pages */
-router.get('/', ctrlLocations.homelist);
+// router.get('/', ctrlLocations.homelist);
+router.get('/', ctrlOthers.angularApp); // use the angularApp
+
+/* not used anymore because we made Angular routing for these requests
 router.get('/location/:locationid', ctrlLocations.locationInfo);
 router.get('/location/:locationid/review/new', ctrlLocations.addReview);
 router.post('/location/:locationid/review/new', ctrlLocations.doAddReview);
+*/
 
 /* Other pages */
 router.get('/about', ctrlOthers.about);
