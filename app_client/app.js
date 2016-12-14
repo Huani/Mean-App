@@ -1,7 +1,7 @@
 (function() { // use IIFE for performance (otherwise we use the global scope when we don't really need it)
 
 
-    angular.module('loc8rApp', ['ngRoute', 'ngSanitize']);
+    angular.module('loc8rApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
 
     function config($routeProvider, $locationProvider) { // to remove the # in the URL we use the locationProvider
         $routeProvider
@@ -16,9 +16,16 @@
                 controller: 'aboutCtrl',
                 controllerAs: 'vm'
             })
-            .otherwise({
-                redirectTo: '/'
-            });
+
+        .when('/location/:locationid', {
+            templateUrl: '/locationDetail/locationDetail.view.html',
+            controller: 'locationDetailCtrl',
+            controllerAs: 'vm'
+        })
+
+        .otherwise({
+            redirectTo: '/'
+        });
 
         $locationProvider.html5Mode(true);
     }
