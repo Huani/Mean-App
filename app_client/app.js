@@ -1,9 +1,9 @@
 (function() { // use IIFE for performance (otherwise we use the global scope when we don't really need it)
 
 
-    angular.module('loc8rApp', ['ngRoute']);
+    angular.module('loc8rApp', ['ngRoute', 'ngSanitize']);
 
-    function config($routeProvider) {
+    function config($routeProvider, $locationProvider) { // to remove the # in the URL we use the locationProvider
         $routeProvider
             .when('/', {
                 templateUrl: 'home/home.view.html', //Add templateUrl to route config to specify view template to use
@@ -11,11 +11,18 @@
                 controllerAs: 'vm'
 
             })
+            .when('/about', {
+                templateUrl: '/common/views/genericText.view.html',
+                controller: 'aboutCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({
                 redirectTo: '/'
             });
+
+        $locationProvider.html5Mode(true);
     }
     angular
         .module('loc8rApp')
-        .config(['$routeProvider', config]);
+        .config(['$routeProvider', '$locationProvider', config]);
 })();
